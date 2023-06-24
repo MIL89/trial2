@@ -7,6 +7,17 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="SHC-Bhy">
+    
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -29,6 +40,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="add-to-homescreen-master/style/addtohomescreen.css">
 </head>
 
 <body>
@@ -509,19 +521,23 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script type= "text/javascript" src= "add-to-homescreen-master/src/addtohomescreen.js"></script>
+    <script>
+
+    if(
+        (("standalone" in window.navigator) && !window.navigator.standalone)
+        ||
+        ( !window.matchMedia('(display-mode: standalone)').matches)
+        
+    ){
+        addToHomescreen();
+    }
+
+        
+    </script>
 
 
-<script>
- if ('serviceWorker' in navigator) {
-    console.log("Will the service worker register?");
-    navigator.serviceWorker.register('service-worker.js')
-      .then(function(reg){
-        console.log("Yes, it did.");
-     }).catch(function(err) {
-        console.log("No it didn't. This happened:", err)
-    });
- }
-</script>
+
     
 </body>
 
