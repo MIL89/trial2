@@ -878,7 +878,7 @@ a span{
     
     if('serviceWorker' in navigator){
         window.addEventListener('load',function(){
-            navigator.serviceWorker.register('/service-worker.js').then(function(registration){
+            navigator.serviceWorker.register('https://mil89.github.io/trial2/service-worker.js').then(function(registration){
                 console.log('Service Registered', registration.scope);
             }, function(err){
                 console.log('Service Registeration Failed', err);
