@@ -874,6 +874,23 @@ a span{
     <!-- Footer End -->
 
 
+    <script type="text/javascript">
+    
+    if('serviceWorker' in navigator){
+        window.addEventListener('load',function(){
+            navigator.serviceWorker.register('/sw.js').then(function(registration){
+                console.log('Service Registered', registration.scope);
+            }, function(err){
+                console.log('Service Registeration Failed', err);
+            });
+        });
+    }
+
+
+</script>
+
+
+
     <!-- Back to Top -->
     <a href="#" style="margin-right: 70px;" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -919,6 +936,9 @@ function closeNav() {
 }
 </script>
 
+
+
+    
    
 </body>
 
