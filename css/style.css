@@ -134,6 +134,21 @@
     }
 }
 
+
+@media (max-width: 768px) {
+
+
+    .navbar .navbar-brand img {
+       max-width: 50px;
+
+         }
+       .navbar .navbar-brand{
+        font-size: 40%;
+         }
+    
+}
+
+
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
         display: block;
