@@ -94,6 +94,25 @@
           console.log("USER NOT LOGGED IN");
         }
       });
+
+
+      // Check if the phone number is present in the Realtime Database
+    function checkPhoneInDatabase(phoneNumber) {
+      var databaseURL = "https://shc-bhy-default-rtdb.firebaseio.com";
+      var databaseRef = firebase.database().ref("users");
+
+      databaseRef.orderByChild("phone").equalTo(phoneNumber).once("value")
+        .then(function(snapshot) {
+          if (snapshot.exists()) {
+            console.log("Phone number found in the database.");
+          } else {
+            console.log("Phone number not found in the database.");
+          }
+        })
+        .catch(function(error) {
+          console.log("Error checking phone number in the database:", error);
+        });
+    }
     </script>
   </body>
 </html>
