@@ -101,7 +101,9 @@
       // Check if the phone number is present in the Realtime Database
     function checkPhoneInDatabase(phoneNumber) {
       var databaseURL = "https://shc-bhy-default-rtdb.firebaseio.com";
-      var databaseRef = firebase.database().ref("users");
+      const database = firebase.database();
+      var databaseRef = database.ref("users")
+
 
       databaseRef.orderByChild("phone").equalTo(phoneNumber).once("value")
         .then(function(snapshot) {
